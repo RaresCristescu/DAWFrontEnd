@@ -19,6 +19,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { Page3Component } from './pages/page3/page3.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { Page3Component } from './pages/page3/page3.component';
     FormsModule,
     CommonModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
