@@ -1,0 +1,49 @@
+<mat-card id="firstDiv">
+  <p>{{title}}</p>
+</mat-card>
+
+<mat-card>
+  <p>Click</p>
+  <button mat-raised-button color="primary" (click)="clickedEvent()">Primary</button>
+  <br>
+  <p>Counter is:{{counter}}</p>
+</mat-card>
+
+<mat-card>
+  <p>List</p>
+  <mat-list>
+    <mat-list-item *ngFor="let user of users; index as i" (click)="selectUser(user)"
+    [class.selected]="user===selectedUser">
+      User Name is: {{user.name}}; Index:{{i+1}}
+    </mat-list-item>
+  </mat-list>
+  <mat-card [ngStyle]="{background: selectedUser.background}">
+    Selected User Name: {{selectedUser.name|uppercase}}
+  </mat-card>
+
+  <mat-card>
+    <p>NgModel</p>
+    <input matInput type="text" [(ngModel)]="selectedUser.name">
+  </mat-card>
+
+  <mat-card *ngIf="selectedUser.name">
+    <p>NgIf</p>
+    <p>User is selected</p>
+  </mat-card>
+
+  <mat-card *ngIf="users.length>=5">
+    <p>NgIf</p>
+    <p>Users mopre then 5</p>
+  </mat-card>
+
+  <button mat-raised-button color="primary" (click)="deleteUser()">Delete user</button>
+  <button mat-raised-button color="primary" (click)="addUser()">Add user</button>
+
+  <mat-card [ngSwitch]="users.length">
+    <ng-template [ngSwitchCase]="5" ]>5</ng-template>
+    <ng-template [ngSwitchCase]="8" ]>8</ng-template>
+    <ng-template [ngSwitchCase]="9" ]>9</ng-template>
+    <ng-template [ngSwitchCase]="10" ]>10</ng-template>
+  </mat-card>
+
+</mat-card>
