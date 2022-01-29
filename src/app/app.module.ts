@@ -21,7 +21,18 @@ import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.compone
 import { Page3Component } from './pages/page3/page3.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MatDividerModule} from '@angular/material/divider';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './pages/register/register.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ImagePreloaderDirective } from './core/directives/ImagePreloader.directive';
+import { DemoPipe } from './core/pipe/demo.pipe';
+import {JwtModule} from '@auth0/angular-jwt';
+import {environment} from "../environments/environment";
 
+
+export function tokenGetter(){
+  return localStorage.getItem('token');
+}
 
 @NgModule({
   declarations: [
@@ -32,7 +43,10 @@ import {MatDividerModule} from '@angular/material/divider';
     Component1Component,
     Component2Component,
     AdminLayoutComponent,
-    Page3Component
+    Page3Component,
+    RegisterComponent,
+    ImagePreloaderDirective,
+    DemoPipe
   ],
   imports: [
     BrowserModule,
@@ -47,7 +61,15 @@ import {MatDividerModule} from '@angular/material/divider';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    JwtModule.forRoot({
+      config:{
+        tokenGetter,
+        allowedDomains:['domain:4200 ',environment.apiUrl]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
