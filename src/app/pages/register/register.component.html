@@ -1,0 +1,46 @@
+<div>
+  <p>Reactive Form Group</p>
+  <form [formGroup]="registrationForm" >
+    <mat-form-field appearance="fill">
+      <mat-label>FirstName</mat-label>
+      <input matInput formControlName="FirstName">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>LastName</mat-label>
+      <input matInput formControlName="LastName">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>UserName</mat-label>
+      <input matInput formControlName="UserName">
+    </mat-form-field>
+    <mat-form-field appearance="fill" MatFormFielControl="Password">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="Password">
+    </mat-form-field>
+    <mat-form-field appearance="fill" MatFormFielControl="Email">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="Email">
+    </mat-form-field>
+<!--    <input formControlName="UserName" placeholder="username" type="text">-->
+<!--    <input formControlName="Password" placeholder="password" type="text">-->
+<!--    <input formControlName="Email" placeholder="email" type="text">-->
+  </form>
+  <div>
+    <button mat-button (click)="checkForm()">Submit</button>
+  </div>
+
+  <div>
+    <p>Image</p>
+    <img [src]="imageUrl"[appImagePreloader]="imageUrl">
+  </div>
+
+  <div appMouseEnter style="background: red">
+    <p>DIV</p>
+    <p>{{value | demo}}</p>
+  </div>
+
+<!--  <div appMouseEnter style="background: red">-->
+<!--    <p>DIV</p>-->
+<!--  </div>-->
+
+</div>
