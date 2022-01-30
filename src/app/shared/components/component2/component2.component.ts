@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Page2serviceService} from "../../../core/services/page2services/page2service.service";
+import {ModalService} from "../../../core/services/modalService/modal.service";
 
 @Component({
   selector: 'app-component2',

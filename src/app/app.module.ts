@@ -35,6 +35,10 @@ import {ComponentsModule} from "./shared/components/components.module";
 import {MatCardModule} from '@angular/material/card';
 import { ParentComponent } from './shared/comunicationComponents/parent/parent.component';
 import { ChildComponent } from './shared/comunicationComponents/child/child.component';
+import { Component1comComponent } from './shared/comunicationComponents/component1com/component1com.component';
+import { Component2comComponent } from './shared/comunicationComponents/component2com/component2com.component';
+import { ModalContainerComponent } from './modals/modal-container/modal-container.component';
+import { Modal1Component } from './modals/modal1/modal1.component';
 
 
 export function tokenGetter(){
@@ -55,7 +59,11 @@ export function tokenGetter(){
     ImagePreloaderDirective,
     DemoPipe,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    Component1comComponent,
+    Component2comComponent,
+    ModalContainerComponent,
+    Modal1Component
   ],
   imports: [
     BrowserModule,
