@@ -39,6 +39,9 @@ import { Component1comComponent } from './shared/comunicationComponents/componen
 import { Component2comComponent } from './shared/comunicationComponents/component2com/component2com.component';
 import { ModalContainerComponent } from './modals/modal-container/modal-container.component';
 import { Modal1Component } from './modals/modal1/modal1.component';
+import { HomeComponent } from './pages/home/home/home.component';
+import { LoginComponent } from './pages/home/login/login.component';
+import {JwtInterceptor} from "./core/interceptors/jwt.interceptor";
 
 
 export function tokenGetter(){
@@ -63,7 +66,9 @@ export function tokenGetter(){
     Component1comComponent,
     Component2comComponent,
     ModalContainerComponent,
-    Modal1Component
+    Modal1Component,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -92,10 +97,8 @@ export function tokenGetter(){
   ],
   providers: [
     Page2serviceService,
-    {provide: HTTP_INTERCEPTORS,
-    useClass:ErrorInterceptor,
-      multi:true
-    }
+    {provide: HTTP_INTERCEPTORS, useClass:ErrorInterceptor, multi:true},
+    {provide: HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi:true}
   ],
   bootstrap: [AppComponent]
 })
