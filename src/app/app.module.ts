@@ -42,6 +42,7 @@ import { Modal1Component } from './modals/modal1/modal1.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { LoginComponent } from './pages/home/login/login.component';
 import {JwtInterceptor} from "./core/interceptors/jwt.interceptor";
+import { AdminComponent } from './admin/admin.component';
 
 
 export function tokenGetter(){
@@ -68,7 +69,8 @@ export function tokenGetter(){
     ModalContainerComponent,
     Modal1Component,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

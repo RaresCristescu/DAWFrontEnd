@@ -1,3 +1,5 @@
+import {Role} from "./role";
+
 export interface User {
 //   public string UserName { get; set; }
 // public string Password{get;set;}
@@ -10,6 +12,7 @@ export interface User {
   Email:string,
   FirstName:string,
   LastName:string,
+  role:Role;
   token?:string;
 
 }

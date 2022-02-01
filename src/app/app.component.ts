@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {User} from "./data/interfaces/user";
 import {Router} from "@angular/router";
 import {AuthenticateService} from "./core/services/authenticateService/authenticate.service";
+import {Role} from "./data/interfaces/role";
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,9 @@ export class AppComponent {
   ) {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
-
+  get isAdmin() {
+    return this.currentUser && this.currentUser.role === Role.Admin;
+  }
   logout() {
     this.authenticationService.logout();
     this.router.navigate(['/login']);

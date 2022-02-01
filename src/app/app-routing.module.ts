@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes,RouterModule  } from '@angular/router';
 import {Page1Component} from "./pages/page1/page1.component";
 import {Page2Component} from "./pages/page2/page2.component";
 import {AdminLayoutComponent} from "./layout/admin-layout/admin-layout.component";
@@ -10,6 +10,8 @@ import {HOME} from "@angular/cdk/keycodes";
 import {HomeComponent} from "./pages/home/home/home.component";
 import {LoginComponent} from "./pages/home/login/login.component";
 import {AuthenticateGuard} from "./core/guard/authenticate.guard";
+import {AdminComponent} from "./admin/admin.component";
+import {Role} from "./data/interfaces/role";
 
 const routes: Routes = [
   {
@@ -46,6 +48,12 @@ const routes: Routes = [
     canActivate:[AuthenticateGuard]
   },
   {
+    path:'admin',
+    component:AdminComponent,
+    canActivate:[AuthenticateGuard],
+    data:{roles:[Role.Admin]}
+  },
+  {
     path:'login',
     component:LoginComponent,
   },
@@ -60,3 +68,7 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+////////////////////////////////////////////////////
+// export const appRoutingModule = RouterModule.forRoot(routes);

@@ -9,7 +9,7 @@ import {User} from "../../../data/interfaces/user";
   providedIn: 'root'
 })
 export class AuthenticateService {
-  baseUrl = environment.apiUrl;
+  // baseUrl = environment.apiUrl;
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
@@ -25,9 +25,10 @@ export class AuthenticateService {
   login(username: string, password: string) {
     return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password })
       .pipe(map(user => {
-        // store user details and jwt token in local storage to keep user logged in between page refreshes
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        this.currentUserSubject.next(user);
+        if (user && user.token) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currentUserSubject.next(user);
+        }
         return user;
       }));
   }

@@ -1,23 +1,57 @@
-<mat-card>
-  <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Main component {{title}}</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
-  <router-outlet></router-outlet>
-</mat-card>
-<app-modal-container></app-modal-container>
+<!--<mat-card>-->
+<!--  <mat-toolbar color="primary">-->
+<!--    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">-->
+<!--      <mat-icon>menu</mat-icon>-->
+<!--    </button>-->
+<!--    <span>Main component {{title}}</span>-->
+<!--    <span class="example-spacer"></span>-->
+<!--    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">-->
+<!--      <mat-icon>favorite</mat-icon>-->
+<!--    </button>-->
+<!--    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">-->
+<!--      <mat-icon>share</mat-icon>-->
+<!--    </button>-->
+<!--  </mat-toolbar>-->
+<!--  <router-outlet></router-outlet>-->
+<!--</mat-card>-->
+<!--<app-modal-container></app-modal-container>-->
 
 
 
+<!--<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">-->
+<!--  <div class="navbar-nav">-->
+<!--    <a class="nav-item nav-link" routerLink="/">Home</a>-->
+<!--    <a class="nav-item nav-link" (click)="logout()">Logout</a>-->
+<!--  </div>-->
+<!--</nav>-->
+
+<!--&lt;!&ndash; main app container &ndash;&gt;-->
+<!--<div class="container">-->
+<!--  <router-outlet></router-outlet>-->
+<!--</div>-->
+
+<!--<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">-->
+<!--  <div class="navbar-nav">-->
+<!--    <a class="nav-item nav-link" routerLink="/">Home</a>-->
+<!--    <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a>-->
+<!--    <a class="nav-item nav-link" (click)="logout()">Logout</a>-->
+<!--  </div>-->
+<!--</nav>-->
+
+<!--&lt;!&ndash; main app container &ndash;&gt;-->
+<!--<div class="container">-->
+<!--  <router-outlet></router-outlet>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; credits &ndash;&gt;-->
+<!--<div class="text-center mt-4">-->
+<!--  <p>-->
+<!--    <a href="#" target="_top">Angular 8 - Role Based Authorization Tutorial with Example</a>-->
+<!--  </p>-->
+<!--  <p>-->
+<!--    <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>-->
+<!--  </p>-->
+<!--</div>-->
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
   <div class="navbar-nav">
     <a class="nav-item nav-link" routerLink="/">Home</a>
@@ -26,6 +60,12 @@
 </nav>
 
 <!-- main app container -->
-<div class="container">
-  <router-outlet></router-outlet>
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
 </div>
